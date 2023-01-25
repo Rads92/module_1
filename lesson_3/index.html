@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        :root {
+            --main-color: green;
+            --main-font-size: 24px;
+        }
+
+        .main-color {
+            color: blue;
+        }
+
+        h1 {
+            --main-color: red;
+            color: var(--main-color, blue);
+            font-size: var(--main-font-size);
+        }
+
+        nav {
+            border: 5px solid;
+            border-color: var(--main-color, black);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover, a:focus {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: var(--main-color, blue);
+        }
+
+        a:visited {
+            color: green;
+        }
+
+        .typo {
+            background-color: red;
+        }
+
+        p:hover {
+            color: blue;
+            cursor: grab;
+        }
+
+        #p-typo {
+            background-color: violet;
+        }
+
+        div.dark-bg p.typo {
+            background-color: beige;
+        }
+
+        .dark-bg p.typo {
+            background-color: green !important;
+        }
+
+        .dark-bg .typo {
+            background-color: black;
+        }
+        .dark-bg p {
+            background-color: pink;
+        }
+        p {
+            background-color: rgba(50%, 25%, 30%, 0.2);
+        }
+
+        .dark-bg {
+            --dark-bg: darkgray;
+            background-color: var(--dark-bg);
+            padding: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nasza strona</h1>
+    <nav>
+    <ul class="main-navigation-list">
+        <li>Nawigacja</li>
+        <li>
+            <a href="home" class="nav-link">Home</a>
+        </li>
+        <li>
+            <a href="products">Products</a>
+        </li>
+        <li>
+            <a href="contact">contact</a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/">FB</a>
+        </li>
+    </ul>
+</nav>
+<p>Lorem, ipsum dolor.</p>
+<div class="dark-bg"><p class="typo" id="p-typo" style="background-color: aqua;">1 Lorem, ipsum dolor.</p></div>
+<div class="dark-bg"><p class="typo">2 Lorem, ipsum dolor.</p></div>
+<span class="main-color">Lorem ipsum dolor sit.</span>
+<span>Lorem ipsum dolor sit.</span>
+</body>
+</html>
